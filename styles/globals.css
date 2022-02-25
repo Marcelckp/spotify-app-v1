@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .button {
+    @apply h-5 w-5 cursor-pointer hover:scale-125 transition transform duration-100 ease-out;
+  }
+}
+
+.tableLikes {
+  grid-template-columns: [index] 16px [first] 6fr [var1] 4fr [var2] 3fr [last] minmax(
+      120px,
+      1fr
+    );
+  grid-gap: 16px;
+  display: grid;
+  padding: 0 16px;
+}
+
+.tablePlaylist {
+    grid-template-columns: [index] 16px [first] 6fr [var1] 3fr [last] minmax(
+        120px,
+        1fr
+      );
+    grid-gap: 16px;
+    display: grid;
+    padding: 0 16px;
+}
+
+.tableS {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-rows: 1fr;
+    grid-gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(var(180px), 1fr));
+}
+  
+/* var largestValues = function(root) {
+    const result = [];
+    let visited = []; 
+    let queue = [root];
+    
+    const recurse = () => {
+        if (queue.length) {
+        console.log(queue);
+            const node = queue.shift();
+            visited.push(node.val)
+            if (node.left) {
+                queue.push(node.left);
+                
+            }
+            if (node.right) { 
+                queue.push(node.right);
+                
+            }
+
+            recurse();
+        }
+    }
+    
+    recurse();
+    console.log(visited)
+}; */
