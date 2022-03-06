@@ -1,8 +1,9 @@
+import { GetServerSideProps } from 'next';
 import { getSession } from 'next-auth/react';
 import Head from 'next/head';
 import HomePannel from '../components/HomePannel';
 
-function Home() {
+export default function Home() {
   return (
     <div className="bg-[#111] h-screen overflow-hidden w-full">
           <Head>
@@ -13,9 +14,7 @@ function Home() {
   );
 }
 
-export default Home;
-
-export const getServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context);
 
   return {
